@@ -1,0 +1,19 @@
+name: GrimConfig
+version: '${project.version}'
+main: dev.danny.grimconfig.GrimConfigPlugin
+api-version: '1.21'
+description: Toggle individual GrimAC checks on or off, editable in-game.
+author: danny
+depend: [GrimAC]
+
+commands:
+  grimconfig:
+    description: Manage GrimAC check toggles (GUI and commands)
+    usage: /<command> [gui|list|enable|disable|toggle|status|reload] [check|all]
+    aliases: [gcfg, grimchecks]
+    permission: grimconfig.use
+
+permissions:
+  grimconfig.use:
+    description: Allows toggling GrimAC checks via GrimConfig
+    default: op

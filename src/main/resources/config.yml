@@ -1,0 +1,75 @@
+# ─────────────────────────────────────────────────────────────
+#  GrimConfig — toggle individual GrimAC checks on or off.
+#
+#  true  = check is ENABLED  (Grim flags/alerts/punishes normally)
+#  false = check is DISABLED (flags, setbacks and punishment
+#          commands for it are suppressed)
+#
+#  You can edit this file and run /grimconfig reload, or simply
+#  use /grimconfig in-game for a clickable GUI.
+#
+#  This list is AUTO-POPULATED: any check GrimAC actually loads
+#  is added here automatically (defaulting to true) the first
+#  time a player joins. Entries below that don't match a real
+#  check on your Grim version are harmless and simply ignored.
+# ─────────────────────────────────────────────────────────────
+checks:
+  AimDuplicateLook: true
+  AimInvalidPitch: true
+  AimInvalidYaw: true
+  AimModulo360: true
+  AirLiquidBreak: true
+  BadPacketsA: true
+  BadPacketsB: true
+  BadPacketsC: true
+  BadPacketsD: true
+  BadPacketsE: true
+  BadPacketsF: true
+  BadPacketsG: true
+  BadPacketsH: true
+  BadPacketsI: true
+  BadPacketsJ: true
+  BadPacketsK: true
+  BadPacketsL: true
+  BadPacketsM: true
+  BadPacketsN: true
+  BadPacketsO: true
+  BadPacketsP: true
+  BadPacketsQ: true
+  BadPacketsR: true
+  BadPacketsS: true
+  BadPacketsT: true
+  BadPacketsU: true
+  BadPacketsV: true
+  BadPacketsW: true
+  BadPacketsX: true
+  BadPacketsY: true
+  BadPacketsZ: true
+  CrashA: true
+  CrashB: true
+  CrashC: true
+  CrashD: true
+  CrashE: true
+  CrashF: true
+  CrashG: true
+  EntityControl: true
+  Explosion: true
+  FabricatedPlace: true
+  FarPlace: true
+  FastBreak: true
+  GroundSpoof: true
+  Hitbox: true
+  KillauraA: true
+  Knockback: true
+  MultiInteractA: true
+  NegativeTimer: true
+  NoFallA: true
+  NoSlowA: true
+  NoSlowB: true
+  NoSlowC: true
+  NoSlowD: true
+  PositionPlace: true
+  Reach: true
+  RotationPlace: true
+  Simulation: true
+  Timer: true
