@@ -6,7 +6,7 @@
 
     <groupId>dev.danny</groupId>
     <artifactId>grimconfig</artifactId>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
     <packaging>jar</packaging>
 
     <name>GrimConfig</name>
@@ -15,6 +15,14 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.release>21</maven.compiler.release>
+        <!--
+          Compiled against the OLDEST supported Paper API so the jar can't
+          accidentally depend on newer methods. One jar runs on every
+          Paper-based server from 1.21 through the newest release (26.x).
+          Override to verify against a newer API:
+            mvn package -Dpaper.version=26.2-R0.1-SNAPSHOT
+        -->
+        <paper.version>1.21-R0.1-SNAPSHOT</paper.version>
     </properties>
 
     <repositories>
@@ -32,7 +40,7 @@
         <dependency>
             <groupId>io.papermc.paper</groupId>
             <artifactId>paper-api</artifactId>
-            <version>1.21.11-R0.1-SNAPSHOT</version>
+            <version>${paper.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>

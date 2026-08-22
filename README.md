@@ -1,8 +1,9 @@
 # GrimConfig
 
 Toggle individual [GrimAC](https://modrinth.com/plugin/grimanticheat) checks on or off — like
-[GrimCheckup](https://modrinth.com/plugin/grimcheckup), but built for **Minecraft 1.21.11**
-and editable **in-game** through a clickable GUI and commands, not just the config file.
+[GrimCheckup](https://modrinth.com/plugin/grimcheckup), but for **every Minecraft version from
+1.21 through the newest release (26.x)** in a single jar, and editable **in-game** through a
+clickable GUI and commands, not just the config file.
 
 When a check is disabled, GrimConfig cancels its flags, its prediction offsets, and any
 punishment commands Grim would run for it — the check effectively stops existing without
@@ -10,12 +11,17 @@ touching Grim's own config.
 
 ## Requirements
 
-- Paper/Purpur/Spigot **1.21.11** (Java 21)
-- **GrimAC** installed (hard dependency)
+- A **Paper-based** server (Paper, Purpur, Pufferfish, …) on any version from **1.21** to the
+  newest (1.21.x, 26.1, 26.2 — one jar covers them all). Plain Spigot is not supported: the GUI
+  uses Paper's Adventure text API.
+- Java 21+ (whatever your server version already needs)
+- A current **GrimAC** build (hard dependency). GrimConfig talks to Grim through its modern
+  event-bus API, so it needs a Grim release from 2025 or later — Grim itself runs on every
+  Minecraft version, so just keep it up to date.
 
 ## Install
 
-Drop `target/GrimConfig-1.0.0.jar` into your server's `plugins/` folder alongside GrimAC and restart.
+Drop `target/GrimConfig-1.1.0.jar` into your server's `plugins/` folder alongside GrimAC and restart.
 
 ## Usage
 
@@ -42,5 +48,15 @@ discovered as players join, so it stays correct across Grim updates.
 mvn package
 ```
 
-Produces `target/GrimConfig-1.0.0.jar`. Compiles against `paper-api 1.21.11-R0.1-SNAPSHOT`
-and `GrimAPI 1.6.0.9` (from `repo.grim.ac`), nothing is shaded.
+Produces `target/GrimConfig-1.1.0.jar`. Needs JDK 21. Compiles against the **oldest** supported
+API (`paper-api 1.21-R0.1-SNAPSHOT`) on purpose, so the jar can't accidentally depend on anything
+newer, plus `GrimAPI 1.6.0.9` (from `repo.grim.ac`). Nothing is shaded.
+
+To double-check the source against a newer server API (needs a JDK matching that API, e.g. JDK 25
+for 26.x):
+
+```
+mvn compile -Dpaper.version=26.2.build.112-stable -Dmaven.compiler.release=25
+```
+
+Verified compiling against 1.21, 1.21.11, 26.1.2 and 26.2.
