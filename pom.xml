@@ -6,7 +6,7 @@
 
     <groupId>dev.danny</groupId>
     <artifactId>grimconfig</artifactId>
-    <version>1.1.0</version>
+    <version>1.1.1</version>
     <packaging>jar</packaging>
 
     <name>GrimConfig</name>
@@ -46,7 +46,7 @@
         <dependency>
             <groupId>ac.grim.grimac</groupId>
             <artifactId>GrimAPI</artifactId>
-            <version>1.6.0.9</version>
+            <version>1.6.0.13</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>

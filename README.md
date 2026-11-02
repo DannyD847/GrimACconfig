@@ -12,7 +12,7 @@ touching Grim's own config.
 ## Requirements
 
 - A **Paper-based** server (Paper, Purpur, Pufferfish, …) on any version from **1.21** to the
-  newest (1.21.x, 26.1, 26.2 — one jar covers them all). Plain Spigot is not supported: the GUI
+  newest (1.21.x, 26.1, 26.2, 26.3 — one jar covers them all). Plain Spigot is not supported: the GUI
   uses Paper's Adventure text API.
 - Java 21+ (whatever your server version already needs)
 - A current **GrimAC** build (hard dependency). GrimConfig talks to Grim through its modern
@@ -21,7 +21,7 @@ touching Grim's own config.
 
 ## Install
 
-Drop `target/GrimConfig-1.1.0.jar` into your server's `plugins/` folder alongside GrimAC and restart.
+Drop `target/GrimConfig-1.1.1.jar` into your server's `plugins/` folder alongside GrimAC and restart.
 
 ## Usage
 
@@ -48,15 +48,15 @@ discovered as players join, so it stays correct across Grim updates.
 mvn package
 ```
 
-Produces `target/GrimConfig-1.1.0.jar`. Needs JDK 21. Compiles against the **oldest** supported
+Produces `target/GrimConfig-1.1.1.jar`. Needs JDK 21. Compiles against the **oldest** supported
 API (`paper-api 1.21-R0.1-SNAPSHOT`) on purpose, so the jar can't accidentally depend on anything
-newer, plus `GrimAPI 1.6.0.9` (from `repo.grim.ac`). Nothing is shaded.
+newer, plus `GrimAPI 1.6.0.13` (from `repo.grim.ac`). Nothing is shaded.
 
 To double-check the source against a newer server API (needs a JDK matching that API, e.g. JDK 25
 for 26.x):
 
 ```
-mvn compile -Dpaper.version=26.2.build.112-stable -Dmaven.compiler.release=25
+mvn compile -Dpaper.version=26.2.build.135-stable -Dmaven.compiler.release=25
 ```
 
-Verified compiling against 1.21, 1.21.11, 26.1.2 and 26.2.
+Verified compiling against 1.21, 1.21.11, 26.1.2, 26.2 and 26.3.
